@@ -22,19 +22,20 @@ public class dashboard extends AppCompatActivity {
                 text();
             }
         });
-    }
 
+        final Button text1= findViewById(R.id.speechtotext);
+        text1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text1();
+            }
+        });
+    }
+    private void text1() {
+        startActivity(new Intent(getApplicationContext(),SpeechToText.class));
+    }
     private void text() {
         startActivity(new Intent(getApplicationContext(),TextToSpeech.class));
-        finish();
     }
-
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();//logout
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
-    }
-
-
 
 }
