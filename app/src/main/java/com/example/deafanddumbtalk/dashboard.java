@@ -30,12 +30,24 @@ public class dashboard extends AppCompatActivity {
                 text1();
             }
         });
+
+
+        final Button text2= findViewById(R.id.signlanguage);
+        text2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text2();
+            }
+        });
     }
     private void text1() {
         startActivity(new Intent(getApplicationContext(),SpeechToText.class));
     }
     private void text() {
         startActivity(new Intent(getApplicationContext(),TextToSpeech.class));
+    }
+    private void text2() {
+        startActivity(new Intent(getApplicationContext(),SignLanguage.class));
     }
 
 }
